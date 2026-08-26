@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "ExtensionWatch",
+  "version": "1.0",
+  "description": "Monitors your Chrome extensions and alerts you when they silently gain new permissions.",
+  "permissions": [
+    "management",
+    "storage",
+    "notifications",
+    "alarms",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
