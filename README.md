@@ -1,6 +1,6 @@
 # ExtensionWatch
 
-## Detecting Silent Permission Abuse in Chrome Extensions Through Real-Time Update Monitoring
+## Detecting Silent Permission Abuse in Chrome Extensions Through Periodic Update Monitoring
 
 ExtensionWatch is a Manifest V3 Chrome extension developed as part of an MSc Cybersecurity research project at Technological University Dublin.
 
