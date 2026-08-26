@@ -2,58 +2,44 @@
 
 ExtensionWatch is a Manifest V3 Chrome extension developed as part of an MSc Cybersecurity research project at Technological University Dublin.
 
-The system monitors the declared permission state of installed Chrome extensions and compares successive observations to identify newly introduced permissions. Detected changes are assessed using empirical permission patterns derived from a collected extension population and permission information documented by Chrome.
+It provides periodic monitoring of installed Chrome extensions by maintaining local permission snapshots and comparing successive observations to identify newly introduced permissions.
 
-The project investigates whether periodic, user-level monitoring of extension permissions can provide additional visibility into potentially concerning permission changes, complementing existing browser security controls.
+## Research Approach
 
-## Research Objective
+ExtensionWatch combines two assessment layers.
 
-Browser extensions may change their declared permissions when they are updated. ExtensionWatch investigates a practical approach for observing these changes after installation.
+Layer 1 uses functional category profiles derived from a collected population of Chrome extensions.
 
-The implementation provides two complementary capabilities:
+Layer 2 uses documented Chrome permission information for extensions that do not match a qualifying category and as an additional evidence source.
 
-1. Current permission assessment of installed extensions.
-2. Periodic comparison of successive extension states.
-
-A resulting classification is an evidence-based risk indicator intended to support user review. It does not establish that an extension is malicious.
+Detected permission changes are classified as Low, Medium, or High risk to support user review. A classification does not establish malicious intent.
 
 ## Main Features
 
-- Current permission assessment
-- Periodic permission monitoring
-- Local extension snapshots
-- Successive snapshot comparison
-- Added and removed permission detection
-- Functional category identification
-- Category-based permission assessment
-- Universal permission rules
-- High, Medium and Low risk classification
-- Chrome desktop notifications
-- Alert history
-- Alert dismissal and restoration
-- Live extension inventory
+Current permission assessment
 
-## Monitoring Approach
+Periodic permission monitoring
 
-ExtensionWatch uses the following processing pipeline:
+Permission snapshot and comparison
+
+Functional category assessment
+
+Universal permission rules
+
+Risk classification
+
+Chrome notifications
+
+Alert history and review
+
+## Project Structure
 
 ```text
-Chrome Management API
-        |
-        v
-Extension Snapshot
-        |
-        v
-Static Permission Assessment
-        |
-        v
-Successive Snapshot Comparison
-        |
-        v
-Risk Classification
-        |
-        v
-Notification and Alert History
-        |
-        v
-Popup Review
+ExtensionWatch/
+├── background/
+├── icons/
+├── popup/
+├── src/
+├── tests/
+├── manifest.json
+└── README.md
